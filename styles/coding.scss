@@ -1,0 +1,48 @@
+.threeD {
+    &--superman{
+        transform: translate(50%, -50%);
+        text-transform: uppercase;
+        font-weight: 700;
+        opacity: 0.6;
+        color: rgb(255, 208, 0);
+        text-shadow: 1px 1px 1px rgb(204, 12, 12),
+            1px 2px 1px rgb(204, 12, 12),
+            1px 3px 1px rgb(204, 12, 12),
+            1px 4px 1px rgb(204, 12, 12);
+            // 1px 5px 1px red,
+            // 1px 6px 1px red,
+            // 1px 7px 1px red,
+            // 1px 8px 1px red,
+            // 1px 9px 1px red,
+            // 1px 10px 1px red,
+            // 1px 18px 6px rgba(16, 16, 16, 0.4),
+            // 1px 22px 10px rgba(16, 16, 16, 0.2),
+            // 1px 25px 35px rgba(16, 16, 16, 0.2),
+            // 1px 30px 60px rgba(16, 16, 16, 0.4);
+    }
+    &--world{
+        transform: translate(50%, -50%);
+        text-transform: uppercase;
+        font-weight: 700;
+        opacity: 0.6;
+        color: rgb(28, 165, 189);
+        text-shadow: 1px 1px 1px rgb(12, 42, 80),
+            1px 2px 1px rgb(12, 42, 80),
+            1px 3px 1px rgb(12, 42, 80),
+            1px 4px 1px rgb(12, 42, 80);
+            // 1px 5px 1px red,
+            // 1px 6px 1px red,
+            // 1px 7px 1px red,
+            // 1px 8px 1px red,
+            // 1px 9px 1px red,
+            // 1px 10px 1px red,
+            // 1px 18px 6px rgba(16, 16, 16, 0.4),
+            // 1px 22px 10px rgba(16, 16, 16, 0.2),
+            // 1px 25px 35px rgba(16, 16, 16, 0.2),
+            // 1px 30px 60px rgba(16, 16, 16, 0.4);
+    }
+    
+}
+.coding--subheading {
+    color: rgb(92, 92, 92);
+}
