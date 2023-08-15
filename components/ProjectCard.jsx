@@ -2,21 +2,23 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { fadeIn, slideIn } from '@/motion'
+import useCheckMobileScreen from './useCheckMobileScreen'
 
 
 const ProjectCard = (props) => {
+    const {isMobile} = useCheckMobileScreen()
     return (
         <div>
-            <div className='flex'>
+            <div className={isMobile ? '' : 'flex'}>
                 <motion.div
-                    className='width--column-two-1'
+                    className={isMobile ? '' : 'width--column-two-1'}
                     variants={slideIn('left', 'tween', 0.2, 1)}
                 >
                     <img src={props.url} />
 
                 </motion.div>
                 <motion.div
-                    className='width--column-two-1'
+                    className={isMobile ? '' : 'width--column-two-1'}
                     variants={slideIn('right', 'tween', 0.2, 1)}
                 >
                     <div className='proj--title fs--30 mb--20'><h2>{props.title}</h2></div>

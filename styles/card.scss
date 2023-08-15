@@ -9,6 +9,10 @@
     transition: 0.3s;
     border-radius: 5px;
 
+    @include maxOrientation(1024, portrait) {
+        width: 100%;
+    }
+
     &:hover {
         box-shadow: 0 8px 16px 0 rgba(231, 231, 231, 0.2);
     }
@@ -76,24 +80,28 @@ width: 100%;
 
 .coding--card {
     background: #181818;
-    // padding: 10px;
-    max-height: 60%;
-    max-width: 95%;
     margin-bottom: 15px;
-    border-radius: 5px;
+    border-radius: 15px;
+    padding-right: 30px;
 
+    @include maxOrientation(1024, portrait) {
+        padding-right: 0;
+    }
+
+    &-group {
+        flex: 1;
+    }
+    
     &:hover {
         box-shadow: 0 8px 16px 0 rgba(223, 223, 223, 0.301);
     }
 }
 
 .coding--title--section {
-    margin-top: auto;
-    margin-bottom: auto;
-    padding: 10px;
     background-color: #2e2e2e;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+    border-radius: 15px 0 0 15px;
+    width: 25%;
+    padding: 15px;
 }
 
 .coding--handle--text {
@@ -105,16 +113,9 @@ width: 100%;
 }
 
 .coding--handle {
-    margin-top: auto;
-    margin-bottom: auto;
-    padding: 10px;
 }
 
 .coding--desc {
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-right: 5%;
-    padding: 10px;
 }
 
 .padding--left {

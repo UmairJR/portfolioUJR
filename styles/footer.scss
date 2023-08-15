@@ -1,35 +1,58 @@
-.footer--heading {
-    display: flex;
-    align-items: center;
-    letter-spacing: -.03em;
-}
+.footer {
+    &--heading {
+        display: flex;
+        align-items: center;
+        letter-spacing: -.03em;
 
-.footer--heading span {
-    margin-right: 1rem;
-    background-image: -webkit-gradient(linear, left top, right top, from(#b0f3f1), to(#ffcfdf));
-    background-image: -webkit-linear-gradient(left, #b0f3f1, #ffcfdf);
-    background-image: linear-gradient(90deg, #b0f3f1, #ffcfdf);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: inline-block;
+        span {
+            margin-right: 1rem;
+            background-image: -webkit-gradient(linear, left top, right top, from(#b0f3f1), to(#ffcfdf));
+            background-image: -webkit-linear-gradient(left, #b0f3f1, #ffcfdf);
+            background-image: linear-gradient(90deg, #b0f3f1, #ffcfdf);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+    }
+
+    &--content {
+        align-self: stretch;
+        letter-spacing: 1px;
+    }
+
+    &--email {
+        letter-spacing: 2px;
+    
+        &:hover {
+            box-shadow: inset 0px -5px 0px 0px #00e8f0;
+        }
+    }
+
+    &--group {
+        @include maxOrientation(1024, portrait) {
+            flex-direction: column;
+        }
+
+        &-wrap {
+            @include maxOrientation(1024, portrait) {
+            width: 100%;
+            padding: 0;
+            margin-bottom: 20px;
+            }
+        }
+    }
+
+    &--socials {
+        @include maxOrientation(1024, portrait) {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
 }
 
 .connectwith--me {
     color: rgb(92, 92, 92);
-}
-
-.footer--content {
-    align-self: stretch;
-    letter-spacing: 1px;
-}
-
-.footer--email {
-    letter-spacing: 2px;
-
-    &:hover {
-        box-shadow: inset 0px -5px 0px 0px #00e8f0;
-    }
 }
 
 .footer--copyright {

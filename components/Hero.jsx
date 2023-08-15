@@ -3,15 +3,17 @@ import React from 'react'
 import { useTypewriter, Cursor, Typewriter } from 'react-simple-typewriter'
 import { motion } from 'framer-motion'
 import { msgboxVariant, homeContainerVariant } from '@/motion'
+import useCheckMobileScreen from './useCheckMobileScreen'
 
 const Hero = () => {
+    const {isMobile} = useCheckMobileScreen()
     const { text } = useTypewriter({
         words: ['Developer', 'Student', 'Athlete', 'Coder'],
         loop: {},
     })
     return (
-        <div className='bg--black container--fluid color--white font--family flex pt--50 pb--50'>
-            <div className='width--column-two-1'>
+        <div className={`bg--black container--fluid color--white font--family pt--50 pb--50 ${isMobile ? '' : 'flex'}`}>
+            <div className={`width--column-${isMobile ? 'one' : 'two-1'}`}>
                 <motion.div
                     className='msg--box arrow--bottom font--family fs--17'
                     variants={msgboxVariant}
@@ -21,7 +23,7 @@ const Hero = () => {
                     It's me
                 </motion.div>
                 <motion.h1
-                className='fs--60 mb-5'
+                className={`fs--${isMobile ? '30' : '60'} mb-5`}
                 variants={homeContainerVariant(1)}
                 initial='hidden'
                 whileInView='show'
@@ -53,10 +55,15 @@ const Hero = () => {
                  </motion.p>
                 <button className='btn btn--outline-gold'>Resume</button>
             </div>
-            <div className='width--column-two-1 font--center'>
-                <img src="../profilepic/tilt_try.png"></img>
-                {/* https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLIZNI7K61c1DOczIe_PsuXNG4oIpGXpo82Q&usqp=CAU */}
-            </div>
+            {
+                isMobile ?
+                ''
+                :
+                <div className='width--column-two-1 font--center'>
+                    <img src="../profilepic/tilt_try.png"></img>
+                    {/* https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLIZNI7K61c1DOczIe_PsuXNG4oIpGXpo82Q&usqp=CAU */}
+                </div>
+            }
         </div>
     )
 }

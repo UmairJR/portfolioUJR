@@ -3,14 +3,16 @@ import React from 'react'
 import Card from './Card'
 import { motion } from 'framer-motion'
 import { msgboxVariant, homeContainerVariant, staggerContainer } from '@/motion'
+import useCheckMobileScreen from './useCheckMobileScreen'
 
 const Overview = () => {
+    const {isMobile} = useCheckMobileScreen()
     return (
         <div className='bg--black container--fluid color--white font--family pt--50 pb--50'>
 
 
 
-            <div className='pr--80'>
+            <div className={isMobile ? '' : 'pr--80'}>
                 <h1 className='fs--50 mb--10'> Overview.</h1>
                 <p className='fs--20 mb--100'> I'm a skilled software developer with experience in TypeScript and
                     JavaScript, and expertise in frameworks like React, Node.js, and
@@ -21,7 +23,7 @@ const Overview = () => {
 
 
             <motion.div
-                className='flex'
+                className={`${isMobile ? '' : 'flex'}`}
                 variants={staggerContainer}
                 initial="hidden"
                 whileInView="show"
@@ -29,7 +31,7 @@ const Overview = () => {
             >
                 {
                     cardTexts.map((cardText, index) => (
-                        <div className={`width--column-four-5 ${cardTexts.length - 1 == index ? "" : "mr--10"}`}>
+                        <div className={`width--column-${isMobile ? 'one' : 'four-5'} ${cardTexts.length - 1 == index ? "" : isMobile ? 'mb--10' : "mr--10"}`} key={`cardText--${index}`}>
                             <Card index={index+1} text={cardText} />
                         </div>
                     ))

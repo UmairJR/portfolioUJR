@@ -1,18 +1,19 @@
 import React from 'react'
 import SocialCard from './SocialCard'
+import useCheckMobileScreen from './useCheckMobileScreen'
 
 const Footer = () => {
     return (
-        <div className='bg--footer container--fluid color--white font--family pt--50 pb--30'>
-            <div className='flex'>
-                <div className='width--column-two-1'>
-                    <h1 class="footer--heading fs--50">
+        <footer className='bg--footer container--fluid color--white font--family pt--50 pb--30'>
+            <div className='flex footer--group'>
+                <div className='width--column-two-1 footer--group-wrap'>
+                    <h1 className="footer--heading fs--50">
                         <span className="font--bold">Dont be a stranger!</span>
                         <small>👋</small>
                     </h1>
                     <p className="connectwith--me mt--10 fs--25">Connect with me online</p>
                 </div>
-                <div className='width--column-two-1 pl--20'>
+                <div className='width--column-two-1 pl--20 footer--group-wrap'>
                     <div className='footer--content fs--25'>
                         <p >If you have any questions about me or my projects,
                          or (politely) argue about who is better, Messi or Ronaldo?<br/> I'm your man!
@@ -28,10 +29,10 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className='flex pt--50'>
+            <div className='flex pt--50 footer--socials'>
                 {
                     socials.map((element, index) => (
-                        <div className='width--column-four-1'>
+                        <div className='width--column-four-1' key={`socials--${index}`}>
                             <SocialCard title={socials[index].title} link={socials[index].link} url={socials[index].url} />
                         </div>
                     ))
@@ -40,11 +41,11 @@ const Footer = () => {
             <div className='footer--copyright fs--20 mt--50'>
             
             DESIGNED & DEVELOPED BY 
-            <span class="copyright--fancy"> Umair Shaikh.</span> ©  
-            <span class="copyright--underlined copyright--underline-mask">2023</span>
+            <span className="copyright--fancy"> Umair Shaikh.</span> ©  
+            <span className="copyright--underlined copyright--underline-mask">2023</span>
             
             </div>
-        </div>
+        </footer>
     )
 }
 

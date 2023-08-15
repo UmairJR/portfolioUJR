@@ -1,6 +1,7 @@
 import Coding from '@/components/Coding'
 import Expirience from '@/components/Expirience'
 import Hero from '@/components/Hero'
+import MyAppProvider, { MyAppContext } from '@/components/MyAppProvider'
 import Overview from '@/components/Overview'
 import Project from '@/components/Project'
 import Skill from '@/components/Skill'
@@ -9,13 +10,15 @@ import Image from 'next/image'
 
 export default function Home() {
   return (
-    <main>
-    <Hero />
-    <Overview />
-    <Skill />
-    <Project />
-    <Expirience />
-    <Coding />
-    </main>
+    <MyAppProvider>
+      <main>
+        <Hero />
+        <Overview />
+        <Skill />
+        <Project />
+        <Expirience />
+        <Coding />
+      </main>
+    </MyAppProvider>
   )
 }

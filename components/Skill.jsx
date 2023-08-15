@@ -2,13 +2,15 @@
 import React from 'react'
 import { useTypewriter, Cursor, Typewriter } from 'react-simple-typewriter'
 import SkillCard from './SkillCard'
+import useCheckMobileScreen from './useCheckMobileScreen'
 
 const Skill = () => {
+    const {isMobile} = useCheckMobileScreen()
     return (
         <div className='bg--black container--fluid color--white font--family pt--50 pb--50'>
             <h1 className='fs--50 mb--20'> Skills.</h1>
-            <div className='flex'>
-                <div className='width--column-three-1 fonr--center mr--5'>
+            <div className={isMobile ? '' : 'flex'}>
+                <div className={`width--column-${isMobile ? 'one' : 'three-1'} fonr--center mr--5`}>
                     <div className='border--right mb--30'>
                         <h3 className='fs--30 pd--10 font--center'>Programming Language</h3>
                     </div>
@@ -18,7 +20,7 @@ const Skill = () => {
                                 pl.map((element, index) => {
                                     const midpoint = Math.floor(pl.length / 2);
                                     if (index < midpoint) {
-                                        return <SkillCard title={pl[index].title} url={pl[index].url} />;
+                                        return <SkillCard title={pl[index].title} url={pl[index].url} key={`skill--card-${index}`}/>;
                                     }
                                     return null;
                                 })
@@ -29,7 +31,7 @@ const Skill = () => {
                                 pl.map((element, index) => {
                                     const midpoint = Math.floor(pl.length / 2);
                                     if (index >= midpoint) {
-                                        return <SkillCard title={pl[index].title} url={pl[index].url} />;
+                                        return <SkillCard title={pl[index].title} url={pl[index].url} key={`skills--card-${index}`}/>;
                                     }
                                     return null;
                                 })
@@ -37,7 +39,7 @@ const Skill = () => {
                         </div>
                     </div>
                 </div>
-                <div className='width--column-three-1 font--center mr--5'>
+                <div className={`width--column-${isMobile ? 'one' : 'three-1'} font--center mr--5`}>
                     <div className='border--right mb--30'>
                         <h3 className='fs--30 pd--10 font--center min--height'>Frameworks / Libraries</h3>
                     </div>
@@ -48,7 +50,7 @@ const Skill = () => {
                                 lib.map((element, index) => {
                                     const midpoint = Math.floor(lib.length / 2);
                                     if (index >= midpoint) {
-                                        return <SkillCard title={lib[index].title} url={lib[index].url} />;
+                                        return <SkillCard title={lib[index].title} url={lib[index].url} key={`skills--cards-${index}`}/>;
                                     }
                                     return null;
                                 })
@@ -59,7 +61,7 @@ const Skill = () => {
                                 lib.map((element, index) => {
                                     const midpoint = Math.floor(lib.length / 2);
                                     if (index < midpoint) {
-                                        return <SkillCard title={lib[index].title} url={lib[index].url} />;
+                                        return <SkillCard title={lib[index].title} url={lib[index].url} key={`skill--cards-${index}`}/>;
                                     }
                                     return null;
                                 })
@@ -67,9 +69,9 @@ const Skill = () => {
                         </div>
                     </div>
                 </div>
-                <div className='width--column-three-1 font--center'>
+                <div className={`width--column-${isMobile ? 'one' : 'three-1'} font--center`}>
                     <div className='mb--30'>
-                        <h3 className='fs--30 pd--10 font--center min--height'>Databases<br /><br /></h3>
+                        <h3 className='fs--30 pd--10 font--center min--height'>Databases</h3>
                     </div>
                     <div className='font--center flex'>
                         <div className='width--column-two-1 mr--5'>

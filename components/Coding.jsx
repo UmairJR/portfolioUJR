@@ -42,6 +42,7 @@ const Coding = () => {
                             url={cprofiles[index].url}
                             handle={cprofiles[index].handle}
                             desc={cprofiles[index].desc}
+                            key={`coding--card-${index}`}
                         />
 
                     ))

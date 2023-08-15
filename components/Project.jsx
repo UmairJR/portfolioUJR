@@ -1,7 +1,6 @@
 'use client'
 import React from 'react'
 import ProjectCard from './ProjectCard'
-import ProjectCardInverse from './ProjectCardInverse'
 import { motion } from 'framer-motion'
 import { staggerContainer } from '@/motion'
 
@@ -25,33 +24,6 @@ const Project = () => {
                     repo={projects[0].repo}
                 />
             </motion.div>
-            <motion.div
-                className='mb--50'
-                variants={staggerContainer}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: false, amount: 0.25 }}
-            >
-                <ProjectCardInverse
-                    url={projects[0].url}
-                    title={projects[0].title}
-                    desc={projects[0].desc}
-                    tech={projects[0].tech}
-                    link={projects[0].link}
-                    repo={projects[0].repo}
-
-                />
-            </motion.div>
-            <div className='mb--50'>
-                <ProjectCard />
-            </div>
-            <div className='mb--50'>
-
-            </div>
-
-
-
-
         </div>
     )
 }
