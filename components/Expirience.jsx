@@ -1,7 +1,8 @@
 'use client'
 import React from 'react'
 import { motion } from 'framer-motion'
-import { msgboxVariant, homeContainerVariant } from '@/motion'
+import { staggerContainer, homeContainerVariant } from '@/motion'
+import ExpCard from './ExpCard'
 
 const Expirience = () => {
   return (
@@ -13,32 +14,30 @@ const Expirience = () => {
         whileInView='show'
         >Work Expirience.
     </motion.h1>
-    <ul className="experience--list">
+    
+    <motion.ul 
+    className="experience--list"
+    variants={staggerContainer}
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: false, amount: 0.25 }}
+    >
     {
         exp.map((exps, index) => (
-            <li className='flex flex--align-items-center mb--25'>
-                <div className='ml--25'>
-                    <div>
-                        {exps.title}
-                    </div>
-                    <div>
-                        {exps.title}
-                    </div>
-                    <div>
-                        {exps.title}
-                    </div>
-                    <div>
-                        {exps.title}
-                    </div>
-                    <div>
-                        {exps.title}
-                    </div>
-                    
-                </div>
-            </li>
+           
+                    <ExpCard
+                    index={index+1}
+                    title={exp[index].title}
+                    company={exp[index].company}
+                    company_link={exp[index].company_link}
+                    certificate={exp[index].certificate}
+                    start_date={exp[index].start_date}
+                    end_date={exp[index].end_date}
+                    desc={exp[index].desc}
+                    />
         ))
     }
-    </ul>
+    </motion.ul>
 </div>
   )
 }
