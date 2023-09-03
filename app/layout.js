@@ -1,7 +1,10 @@
+"use client"
+
 import Header from '@/components/Header'
 import '../styles/index.scss'
 import { Inter } from 'next/font/google'
 import Footer from '@/components/Footer'
+import MyAppProvider from '@/components/MyAppProvider'
 
 
 
@@ -16,9 +19,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-      <Header />
-      {children}
-      <Footer /></body>
+      <MyAppProvider>
+        <Header />
+        {children}
+        <Footer />
+      </MyAppProvider>
+      </body>
     </html>
   )
 }

@@ -10,15 +10,13 @@ import Image from 'next/image'
 
 export default function Home() {
   return (
-    <MyAppProvider>
-      <main>
-        <Hero />
-        <Overview />
-        <Skill />
-        <Project />
-        <Expirience />
-        <Coding />
-      </main>
-    </MyAppProvider>
+    <main>
+      <Hero />
+      <Overview />
+      <Skill />
+      <Project />
+      <Expirience />
+      <Coding />
+    </main>
   )
 }

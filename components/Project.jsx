@@ -6,7 +6,7 @@ import { staggerContainer } from '@/motion'
 
 const Project = () => {
     return (
-        <div className='bg--black container--fluid color--white font--family pt--50 pb--50'>
+        <div className='bg--black container--fluid color--white font--family pt--50 pb--50' id='project'>
             <h1 className='fs--50 pb--50'>Projects.</h1>
             <motion.div
                 className='mb--50'

@@ -7,7 +7,7 @@ import useCheckMobileScreen from './useCheckMobileScreen'
 const Skill = () => {
     const {isMobile} = useCheckMobileScreen()
     return (
-        <div className='bg--black container--fluid color--white font--family pt--50 pb--50'>
+        <div className='bg--black container--fluid color--white font--family pt--50 pb--50' id='skills'>
             <h1 className='fs--50 mb--20'> Skills.</h1>
             <div className={isMobile ? '' : 'flex'}>
                 <div className={`width--column-${isMobile ? 'one' : 'three-1'} fonr--center mr--5`}>

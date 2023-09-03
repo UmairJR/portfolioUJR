@@ -42,13 +42,6 @@
             }
         }
     }
-
-    &--socials {
-        @include maxOrientation(1024, portrait) {
-            flex-direction: column;
-            align-items: center;
-        }
-    }
 }
 
 .connectwith--me {

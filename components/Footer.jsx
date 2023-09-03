@@ -3,6 +3,7 @@ import SocialCard from './SocialCard'
 import useCheckMobileScreen from './useCheckMobileScreen'
 
 const Footer = () => {
+    const isMobile = useCheckMobileScreen()
     return (
         <footer className='bg--footer container--fluid color--white font--family pt--50 pb--30'>
             <div className='flex footer--group'>
@@ -12,6 +13,15 @@ const Footer = () => {
                         <small>👋</small>
                     </h1>
                     <p className="connectwith--me mt--10 fs--25">Connect with me online</p>
+                    <ul className='flex mt--20 footer--socials'>
+                        {
+                            socials.map((element, index) => (
+                                <li key={`socials--${index}`} className='mr--10'>
+                                    <SocialCard title={socials[index].title} link={socials[index].link} url={socials[index].url} />
+                                </li>
+                            ))
+                        }
+                    </ul>
                 </div>
                 <div className='width--column-two-1 pl--20 footer--group-wrap'>
                     <div className='footer--content fs--25'>
@@ -28,15 +38,6 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className='flex pt--50 footer--socials'>
-                {
-                    socials.map((element, index) => (
-                        <div className='width--column-four-1' key={`socials--${index}`}>
-                            <SocialCard title={socials[index].title} link={socials[index].link} url={socials[index].url} />
-                        </div>
-                    ))
-                }
             </div>
             <div className='footer--copyright fs--20 mt--50'>
             

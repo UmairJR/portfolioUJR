@@ -6,7 +6,7 @@ import CodingCard from './CodingCard'
 
 const Coding = () => {
     return (
-        <div className='bg--black container--fluid color--white font--family pt--50 pb--50'>
+        <div className='bg--black container--fluid color--white font--family pt--50 pb--50' id='profile'>
             <div className='coding--heading'>
                 <motion.h1
                     className='fs--50 pb--20'

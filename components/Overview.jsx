@@ -8,7 +8,7 @@ import useCheckMobileScreen from './useCheckMobileScreen'
 const Overview = () => {
     const {isMobile} = useCheckMobileScreen()
     return (
-        <div className='bg--black container--fluid color--white font--family pt--50 pb--50'>
+        <div className='bg--black container--fluid color--white font--family pt--50 pb--50' id='about'>
 
 
 
